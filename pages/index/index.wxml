@@ -1,0 +1,21 @@
+<view class="weui-search-bar">
+   <view class="weui-search-bar__form">
+    <view class="weui-search-bar__box">
+      <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+      <input type="text" class="weui-search-bar__input" placeholder="请输入一个位置" value="{{keyWord}}" bindinput="bindSearchValue"/>
+    </view>
+  </view>
+    <view class="weui-search-bar-btn" bindtap="wxSearchInput">
+         <text data-key='search'>搜索</text>
+     </view>
+</view>
+<view wx:for="{{resultData}}" wx:for-item="formation">
+  <view class='home-view-item'>
+    <view wx:if="{{formation.level < 6}}"> 阵型：{{formation.name}}，解锁等级：＜6 </view>
+    <view wx:else> 阵型：{{formation.name}}，解锁等级：{{formation.level}} </view>
+    <view class='formation-playerlist' wx:for="{{formation.players}}" wx:for-item="playerlist">
+       {{playerlist}}  
+      </view>
+    <view class="home-view-line"></view>
+  </view>
+</view>
