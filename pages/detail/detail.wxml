@@ -1,0 +1,16 @@
+<!--pages/detail/detail.wxml-->
+
+<view wx:if="{{level < 6}}"><text>阵型：{{title}}</text>，解锁等级：＜6 </view>
+<view wx:else> <text>阵型名称：{{title}}</text>，解锁等级：{{level}} </view>
+
+<!-- <text>阵型名称：{{title}}</text>
+<view wx:if="{{level < 6}}"> 解锁等级：＜6 </view>
+<view wx:else> 解锁等级：{{level}} </view> -->
+
+    
+<view class='formation-view'>
+<canvas canvas-id='formationCanvas'></canvas>
+</view>
+
+<text>{{desc}}</text>
+

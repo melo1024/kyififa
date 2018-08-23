@@ -1,3 +1,20 @@
+var app = getApp();
+var allFormations = app.globalData.allFormations;
+
+function isFormationContrainsAllPlayers(formation, keyWords) {
+  var f_players = formation.players;
+  var f_all_player = [];
+  for (var i = 0; i < f_players.length; i++) {
+    f_all_player = f_all_player.concat(f_players[i]);
+  }
+  for (var i = 0; i < keyWords.length; i++) {
+    if (f_all_player.indexOf(keyWords[i]) == -1) {
+      return false;
+    }
+  }
+  return true;
+};
+
 Page({
   bindSearchValue: function (e) {
     var value = e.detail.value;
@@ -5,177 +22,42 @@ Page({
       keyWord: value,
     });
   },
+
+  viewDetail: function(e){
+    var index = parseInt(e.currentTarget.dataset.index);
+    wx.navigateTo({
+      url: 'detail?players=' + this.data.resultData[index]
+    })
+  },
   
   wxSearchInput: function (e) {
     var that = this;
-    var tempData = [];
-    for (var i = 0; i < this.data.allFormations.length; i++){
-      var playerslist = this.data.allFormations[i].players;
-      for (var j = 0; j < playerslist.length; j++) {
-        if (playerslist[j].indexOf(that.data.keyWord) > -1) {
-          tempData.push(this.data.allFormations[i]);
-          break;
-        }
+    var keyWordStr = that.data.keyWord;
+    if (keyWordStr == null || keyWordStr.length==0){
+      this.setData({ resultData: allFormations });
+      return;
+    }
+    var newResult = [];
+    var keyWords = [];
+    if (keyWordStr.indexOf("，") > -1){
+      keyWords = keyWordStr.split("，");
+    } else {
+      keyWords.push(keyWordStr);
+    }
+    for (var i = 0; i < allFormations.length; i++){
+      if (isFormationContrainsAllPlayers(allFormations[i], keyWords)){
+        newResult.push(allFormations[i]);
       }
     }
-    this.setData({ resultData: tempData })
+    this.setData({ resultData: newResult })
   },
 
   data: {
     keyWord: '',
-    resultData: [],
-    allFormations: [
-      {
-        name: "442平行",
-        level:0,
-        players: [["前锋", "前锋"], ["左前卫", "中前卫", "中前卫", "右前卫"], ["左后卫", "中后卫", "中后卫", "右后卫"]]
-      },
-      {
-        name: "433进攻",
-        level: 0,
-        players: [["左边锋", "前锋", "右边锋"], ["中前卫", "前腰", "中前卫"], ["左后卫", "中后卫", "中后卫", "右后卫"]]
-      },
-      {
-        name: "343平行",
-        level: 0,
-        players: [["左边锋", "前锋", "右边锋"], ["左前卫", "中前卫", "中前卫", "右前卫"], ["中后卫", "中后卫", "中后卫"]]
-      },
-      {
-        name: "3421",
-        level: 0,
-        players: [["前锋"], ["左内锋", "右内锋"], ["左前卫", "中前卫", "中前卫", "右前卫"], ["中后卫", "中后卫", "中后卫"]]
-      },
-      {
-        name: "433",
-        level: 0,
-        players: [["左边锋", "前锋", "右边锋"], ["中前卫", "中前卫", "中前卫"], ["左后卫", "中后卫", "中后卫", "右后卫"]]
-      },
-      {
-        name: "451",
-        level: 0,
-        players: [["前锋"], ["左前卫", "前腰", "中前卫", "前腰", "右前卫"], ["左后卫", "中后卫", "中后卫", "右后卫"]]
-      },
-      {
-        name: "4231狭窄",
-        level: 0,
-        players: [["前锋"], ["前腰", "前腰", "前腰"], ["后腰", "后腰"], ["左后卫", "中后卫", "中后卫", "右后卫"]]
-      },
-      {
-        name: "541",
-        level: 0,
-        players: [["前锋"], ["左前卫", "后腰", "前腰", "右前卫"], ["左翼卫", "中后卫", "中后卫", "中后卫", "右翼卫"]]
-      },
-      {
-        name: "5212",
-        level: 0,
-        players: [["前锋", "前锋"], ["前腰"], ["中前卫", "中前卫"], ["左翼卫", "中后卫", "中后卫", "中后卫", "右翼卫"]]
-      },
-      {
-        name: "451平行",
-        level: 0,
-        players: [["前锋"], ["左前卫", "中前卫", "中前卫", "中前卫", "右前卫"], ["左后卫", "中后卫", "中后卫", "右后卫"]]
-      },
-      {
-        name: "3511",
-        level: 0,
-        players: [["前锋"], ["中锋"], ["左前卫", "后腰", "中前卫", "后腰", "右前卫"], ["中后卫", "中后卫", "中后卫"]]
-      },
-      {
-        name: "41212边路",
-        level: 6,
-        players: [["前锋", "前锋"], ["前腰"], ["左前卫", "右前卫"], ["后腰"], ["左后卫", "中后卫", "中后卫", "右后卫"]]
-      },
-      {
-        name: "433控球",
-        level: 8,
-        players: [["左边锋", "前锋", "右边锋"], ["中前卫", "后腰", "中前卫"], ["左后卫", "中后卫", "中后卫", "右后卫"]]
-      },
-      {
-        name: "4141",
-        level: 10,
-        players: [["前锋"], ["左前卫", "中前卫", "中前卫", "右前卫"], ["后腰"], ["左后卫", "中后卫", "中后卫", "右后卫"]]
-      },
-      {
-        name: "4321",
-        level: 12,
-        players: [["前锋"], ["左内锋", "右内锋"], ["中前卫", "中前卫", "中前卫"], ["左后卫", "中后卫", "中后卫", "右后卫"]]
-      },
-      {
-        name: "424",
-        level: 14,
-        players: [["左边锋", "右边锋", "左内锋", "右内锋"], ["中前卫", "中前卫"], ["左后卫", "中后卫", "中后卫", "右后卫"]]
-      },
-      {
-        name: "352",
-        level: 16,
-        players: [["前锋", "前锋"], ["左前卫", "后腰", "前腰", "后腰", "右前卫"], ["中后卫", "中后卫", "中后卫"]]
-      },
-      {
-        name: "433防守",
-        level: 18,
-        players: [["左边锋", "前锋", "右边锋"], ["后腰", "中前卫", "后腰"], ["左后卫", "中后卫", "中后卫", "右后卫"]]
-      },
-      {
-        name: "532",
-        level: 20,
-        players: [["前锋", "前锋"], ["中前卫", "中前卫", "中前卫"], ["左翼卫", "中后卫", "中后卫", "中后卫", "右翼卫"]]
-      },
-      {
-        name: "4222",
-        level: 22,
-        players: [["前锋", "前锋"], ["前腰", "前腰"], ["后腰", "后腰"], ["左后卫", "中后卫", "中后卫", "右后卫"]]
-      },
-      {
-        name: "4231边路",
-        level: 24,
-        players: [["前锋"], ["左前卫", "前腰", "右前卫"], ["后腰", "后腰"], ["左后卫", "中后卫", "中后卫", "右后卫"]]
-      },
-      {
-        name: "343菱形",
-        level: 26,
-        players: [["左边锋", "前锋", "右边锋"], ["左前卫", "后腰", "前腰", "右前卫"], ["中后卫", "中后卫", "中后卫"]]
-      },
-      {
-        name: "442控球",
-        level: 28,
-        players: [["前锋", "前锋"], ["左前卫", "后腰", "后腰", "右前卫"], ["左后卫", "中后卫", "中后卫", "右后卫"]]
-      },
-      {
-        name: "4312",
-        level: 30,
-        players: [["前锋", "前锋"], ["前腰"], ["中前卫", "中前卫", "中前卫"], ["左后卫", "中后卫", "中后卫", "右后卫"]]
-      },
-      {
-        name: "41212狭窄",
-        level: 32,
-        players: [["前锋", "前锋"], ["前腰"], ["中前卫", "中前卫"], ["后腰"], ["左后卫", "中后卫", "中后卫", "右后卫"]]
-      },
-      {
-        name: "4411进攻",
-        level: 34,
-        players: [["前锋"], ["前腰"], ["左前卫", "后腰", "后腰", "右前卫"], ["左后卫", "中后卫", "中后卫", "右后卫"]]
-      },
-      {
-        name: "3412",
-        level: 36,
-        players: [["前锋", "前锋"], ["前腰"], ["左前卫", "中前卫", "中前卫", "右前卫"], ["中后卫", "中后卫", "中后卫"]]
-      },
-      {
-        name: "5221",
-        level: 38,
-        players: [["前锋"], ["左边锋", "右边锋"], ["中前卫", "中前卫"], ["左翼卫", "中后卫", "中后卫", "中后卫", "右翼卫"]]
-      },
-      {
-        name: "451进攻",
-        level: 40,
-        players: [["前锋"], ["左前卫", "左内锋", "中前卫", "右内锋", "右前卫"],["左后卫", "中后卫", "中后卫", "右后卫"]]
-      },
-      {
-        name: "433伪9号",
-        level: 42,
-        players: [["左边锋", "中锋", "右边锋"], ["中前卫", "后腰", "中前卫"], ["左后卫", "中后卫", "中后卫", "右后卫"]]
-      }
-    ]
+    resultData: []
+  },
+
+  onLoad: function(option){
+    this.setData({ resultData: allFormations });
   }
 })
-

@@ -1,0 +1,12 @@
+/* pages/detail/detail.wxss */
+.canvas {
+    width: 200px;
+    height: 250px;
+}
+
+.formation-view{
+  margin-top: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: center; 
+}
