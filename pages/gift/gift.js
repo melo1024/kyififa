@@ -1,30 +1,18 @@
-// pages/vs/vs.js
+// pages/gift/gift.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    content:''
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // wx.request({
-    //   url: 'http://api.wantuole.com/api/fifa/list2?1=1&n=%E6%AC%A7%E6%96%87&j=ST&mi=91&v=1&_=1535042679212', //仅为示例，并非真实的接口地址
-    //   // data: {
-    //   //   x: '',
-    //   //   y: ''
-    //   // },
-    //   header: {
-    //     'content-type': 'application/json' // 默认值
-    //   },
-    //   success: function (res) {
-    //     console.log(res.data)
-    //   }
-    // })
+
   },
 
   /**

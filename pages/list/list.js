@@ -29,23 +29,23 @@ Page({
   //     url: 'detail?players=' + this.data.resultData[index]
   //   })
   // },
-  
+
   wxSearchInput: function (e) {
     var that = this;
     var keyWordStr = that.data.keyWord;
-    if (keyWordStr == null || keyWordStr.length==0){
+    if (keyWordStr == null || keyWordStr.length == 0) {
       this.setData({ resultData: allFormations });
       return;
     }
     var newResult = [];
     var keyWords = [];
-    if (keyWordStr.indexOf("，") > -1){
+    if (keyWordStr.indexOf("，") > -1) {
       keyWords = keyWordStr.split("，");
     } else {
       keyWords.push(keyWordStr);
     }
-    for (var i = 0; i < allFormations.length; i++){
-      if (isFormationContrainsAllPlayers(allFormations[i], keyWords)){
+    for (var i = 0; i < allFormations.length; i++) {
+      if (isFormationContrainsAllPlayers(allFormations[i], keyWords)) {
         newResult.push(allFormations[i]);
       }
     }
@@ -57,7 +57,7 @@ Page({
     resultData: []
   },
 
-  onLoad: function(option){
+  onLoad: function (option) {
     this.setData({ resultData: allFormations });
   }
 })

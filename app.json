@@ -3,7 +3,9 @@
     "pages/index/index",
     "pages/detail/detail",
     "pages/logs/logs",
-    "pages/vs/vs"
+    "pages/vs/vs",
+    "pages/list/list",
+    "pages/gift/gift"
   ],
   "window": {
     "backgroundTextStyle": "light",
