@@ -1,5 +1,8 @@
 var app = getApp();
 var allFormations = app.globalData.allFormations;
+for (var i = 0; i < allFormations.length; i++){
+  allFormations[i]['desc'] = '由' + app.getDesc(allFormations[i].players) + '组成';
+}
 
 function isFormationContrainsAllPlayers(formation, keyWords) {
   var f_players = formation.players;

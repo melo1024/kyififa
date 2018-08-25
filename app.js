@@ -9,6 +9,27 @@ App({
   loadFormation : function (id) {
     return this.globalData.allFormations[id-1];
   },
+  
+  getDesc: function (players){
+    var result = '';
+    var map = new Map();
+    for(var i = 0; i<players.length; i++) {
+      var playerArr = players[i];
+      for (var j = 0; j < playerArr.length; j++) {
+        if (map.get(playerArr[j]) != null) {
+          var newNum = map.get(playerArr[j]) + 1;
+          map.set(playerArr[j], newNum);
+        } else {
+          map.set(playerArr[j], 1);
+        }
+      }
+    }
+    map.forEach(function (item, key, obj) {
+      result += key + 'x' + item + ',';
+    });
+    return result.substr(0, result.length - 1);
+  },
+
   globalData: {
     userInfo: null,
     allFormations: [

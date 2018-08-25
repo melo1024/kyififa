@@ -81,25 +81,25 @@ function getSeries(players) {
   return series;
 }
 
-function getDesc(players){
-  var result='';
-  var map = new Map();
-  for (var i = 0; i < players.length; i++) {
-    var playerArr = players[i];
-    for (var j=0;j<playerArr.length;j++){
-      if (map.get(playerArr[j])!=null){
-        var newNum = map.get(playerArr[j])+1;
-        map.set(playerArr[j], newNum);
-      }else{
-        map.set(playerArr[j], 1);
-      }
-    }
-  }
-  map.forEach(function(item, key, obj){
-    result += key + 'x' + item + ',';
-  });
-  return '构成：'+result.substr(0,result.length-1);
-}
+// function getDesc(players){
+//   var result='';
+//   var map = new Map();
+//   for (var i = 0; i < players.length; i++) {
+//     var playerArr = players[i];
+//     for (var j=0;j<playerArr.length;j++){
+//       if (map.get(playerArr[j])!=null){
+//         var newNum = map.get(playerArr[j])+1;
+//         map.set(playerArr[j], newNum);
+//       }else{
+//         map.set(playerArr[j], 1);
+//       }
+//     }
+//   }
+//   map.forEach(function(item, key, obj){
+//     result += key + 'x' + item + ',';
+//   });
+//   return result.substr(0,result.length-1);
+// }
 
 Page({
 
@@ -121,7 +121,7 @@ Page({
     this.setData({ title: formation.name });
     this.setData({ level: formation.level });
     var players = formation.players;//[["前锋", "前锋"], ["左前卫", "中前卫", "中前卫", "右前卫"], ["左后卫", "中后卫", "中后卫", "右后卫"]];
-    var desc = getDesc(players);
+    var desc = app.getDesc(players);
     this.setData({ desc: desc });
     var series = getSeries(players);
     var Charts = require('wxcharts.js');

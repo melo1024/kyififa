@@ -9,13 +9,17 @@
          <text data-key='search'>筛选</text>
      </view>
 </view>
-<view wx:for="{{resultData}}" wx:for-item="formation">
-  <navigator url="/pages/detail/detail?id={{formation.id}}" class='home-view-item'>
-    <view wx:if="{{formation.level < 6}}"> 阵型：{{formation.name}}，解锁等级：＜6 </view>
-    <view wx:else> 阵型：{{formation.name}}，解锁等级：{{formation.level}} </view>
-    <view class='formation-playerlist' wx:for="{{formation.players}}" wx:for-item="playerlist">
-       {{playerlist}}  
+<view wx:for="{{resultData}}" wx:for-item="formation" class='formations-view'>
+  <navigator url="/pages/detail/detail?id={{formation.id}}">
+    <view class='home-view-item'>
+      <image src='images/532.jpg' mode='scaleToFill' class='item-image'/>
+      <view class='item-text'>
+        <view wx:if="{{formation.level < 6}}" class='item-title-text'> {{formation.name}}，解锁等级：＜6 </view>
+        <view wx:else class='item-title-text'> {{formation.name}}，解锁等级：{{formation.level}} </view>
+        <view class='item-desc-text'>{{formation.desc}}</view>
       </view>
+      <image src='images/detail.png' mode='scaleToFill' class='item-detail-png'/>
+    </view>
     <view class="home-view-line"></view>
   </navigator>
 </view>
