@@ -108,6 +108,7 @@ Page({
    */
   data: {
     title: '阵型详情',
+    analysis: '',
     desc: '',
     level: 0
   },
@@ -123,6 +124,9 @@ Page({
     var players = formation.players;//[["前锋", "前锋"], ["左前卫", "中前卫", "中前卫", "右前卫"], ["左后卫", "中后卫", "中后卫", "右后卫"]];
     var desc = app.getDesc(players);
     this.setData({ desc: desc });
+    var analysis = app.getAnalysis(formation.id);
+    this.setData({ analysis: analysis });
+    console.log('分析analysis:' + this.data.analysis);
     var series = getSeries(players);
     var Charts = require('wxcharts.js');
 

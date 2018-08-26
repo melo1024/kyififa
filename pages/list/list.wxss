@@ -1,12 +1,5 @@
 
-/** ---------------------- 以下是搜索框的 we-ui 样式--------------------------------*/
-
-/*!
- * WeUI v1.1.1 (https://github.com/weui/weui-wxss)
- * Copyright 2017 Tencent, Inc.
- * Licensed under the MIT license
- */
-
+/** ---------------------- 搜索框 we-ui 样式--------------------------------*/
 .weui-search-bar {
   position: relative;
   padding: 8px 10px;
@@ -56,6 +49,8 @@
   color: #09bb07;
   white-space: nowrap;
 }
+
+/** ---------------------- 其它元素样式--------------------------------*/
 
 .home-view-item{
   display: flex;

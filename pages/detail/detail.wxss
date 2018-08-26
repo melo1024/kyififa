@@ -10,3 +10,26 @@
   display: flex;
   justify-content: center; 
 }
+
+.formation-text-box{
+  padding-top:5px; 
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+
+.formation-left{
+  padding-left: 4px;
+  width: 100px;
+  height: 100%;
+  position: relative;
+}
+
+.formation-right{
+  padding-left: 4px;
+  height: 100%;
+  position: relative;
+}
+
+
+

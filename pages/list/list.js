@@ -52,7 +52,7 @@ Page({
         newResult.push(allFormations[i]);
       }
     }
-    this.setData({ resultData: newResult })
+    this.setData({ resultData: newResult });
   },
 
   data: {

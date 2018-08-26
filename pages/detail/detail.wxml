@@ -7,10 +7,19 @@
 <view wx:if="{{level < 6}}"> 解锁等级：＜6 </view>
 <view wx:else> 解锁等级：{{level}} </view> -->
 
-    
 <view class='formation-view'>
 <canvas canvas-id='formationCanvas'></canvas>
 </view>
 
-<text>构成：{{desc}}</text>
+<view class='formation-text-box'>
+  <view class='formation-left'>构成：</view>
+  <view class='formation-right'>{{desc}}</view>
+</view>
+
+<view class='formation-text-box'>
+  <!-- <view class='formation-left'>分析：</view>
+  <view class='formation-right'>{{analysis}}</view> -->
+  <view class='formation-left'>分析：</view>
+  <view class='formation-right'>{{analysis}}</view>
+</view>
 

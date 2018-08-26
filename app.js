@@ -30,8 +30,27 @@ App({
     return result.substr(0, result.length - 1);
   },
 
+  getAnalysis: function(id){
+    var defaultAnalysis = '暂无数据，欢迎向订阅号fifa_kyi投稿！';
+    if (id <= this.globalData.analysisArray.length){
+      var analysis = this.globalData.analysisArray[id - 1].analysis
+      return analysis == null ? defaultAnalysis : analysis;
+    }
+    return defaultAnalysis;
+  },
+
   globalData: {
     userInfo: null,
+    analysisArray: [
+      {
+        id: 1,
+        analysis: '442为经典阵型之一...442为经典阵型之一...442为经典阵型之一...442为经典阵型之一...'
+      },
+      {
+        id: 2,
+        analysis: '433为经典阵型之一...'
+      }
+    ],
     allFormations: [
       {
         id: 1,

@@ -47,6 +47,7 @@ page{
 }
 
 .tip-text{
+  margin-left:5px; 
   position:fixed; 
   bottom:20px;
 }
