@@ -1,15 +1,24 @@
 <!--pages/detail/detail.wxml-->
 
-<view wx:if="{{level < 6}}"><text>阵型：{{title}}</text>，解锁等级：＜6 </view>
-<view wx:else> <text>阵型名称：{{title}}</text>，解锁等级：{{level}} </view>
+<!-- <view wx:if="{{level < 6}}" class='formation-title'><text>阵型：{{title}}</text>，解锁等级：＜6 </view>
+<view wx:else class='formation-title'> <text>阵型名称：{{title}}</text>，解锁等级：{{level}} </view> -->
 
-<!-- <text>阵型名称：{{title}}</text>
-<view wx:if="{{level < 6}}"> 解锁等级：＜6 </view>
-<view wx:else> 解锁等级：{{level}} </view> -->
-
-<view class='formation-view'>
-<canvas canvas-id='formationCanvas'></canvas>
+<view class='formation-text-box'>
+  <view class='formation-left'>阵型：</view>
+  <view wx:if="{{level < 6}}" class='formation-right'>{{title}}，解锁等级：＜6 </view>
+  <view wx:else class='formation-right'>{{title}}，解锁等级：{{level}}</view>
 </view>
+
+<view class='formation-view' >
+<canvas canvas-id='formationCanvas' 
+style="width: 272px; height:206px; background-image: url('images/ground.jpg');background-size: cover;"></canvas>
+</view>
+
+<!-- <view class='formation-text-box'>
+  <view class='formation-left'>阵型：</view>
+  <view wx:if="{{level < 6}}" class='formation-right'>{{title}}，解锁等级：＜6 </view>
+  <view wx:else class='formation-right'>{{title}}，解锁等级：{{level}}</view>
+</view> -->
 
 <view class='formation-text-box'>
   <view class='formation-left'>构成：</view>

@@ -1,27 +1,44 @@
 // pages/detail/detail.js
-// var location_height = [49, 46, 43, 40, 36, 34, 28, 22, 18];
+// var location_height = [49, 46, 43, 40, 36, 34, 28, 22, 18]; 
 function getHeightByLocation(location){
   var height;
   switch (location){
-    case '前锋': height = 45;break;
-    case '中锋': height = 41; break;
+    case '前锋': height = 140; break;
+    case '中锋': height = 124; break;
     case '左内锋': 
-    case '右内锋': height = 42; break;
+    case '右内锋': height = 134; break;
     case '左边锋':
-    case '右边锋': height = 39; break;
-    case '前腰': height = 32; break;
+    case '右边锋': height = 124; break;
+    case '前腰': height = 110; break;
     case '左前卫':
-    case '右前卫': height = 28; break;
-    case '中前卫': height = 26; break;
-    case '后腰': height = 22; break;
+    case '右前卫': height = 92; break;
+    case '中前卫': height = 84; break;
+    case '后腰': height = 70; break;
     case '左翼卫':
-    case '右翼卫': height = 16; break;
+    case '右翼卫': height = 64; break;
     case '左后卫':
     case '中后卫':
-    case '右后卫': height = 12; break;
+    case '右后卫': height = 48; break;
   }
   return height;
 }
+
+    // case '前锋': height = 45; break;
+    // case '中锋': height = 41; break;
+    // case '左内锋': 
+    // case '右内锋': height = 42; break;
+    // case '左边锋':
+    // case '右边锋': height = 39; break;
+    // case '前腰': height = 32; break;
+    // case '左前卫':
+    // case '右前卫': height = 28; break;
+    // case '中前卫': height = 26; break;
+    // case '后腰': height = 22; break;
+    // case '左翼卫':
+    // case '右翼卫': height = 16; break;
+    // case '左后卫':
+    // case '中后卫':
+    // case '右后卫': height = 12; break;
 
 function getSerie(playerlist, serieName){
   var len = parseInt(68/(playerlist.length+1));
@@ -81,26 +98,6 @@ function getSeries(players) {
   return series;
 }
 
-// function getDesc(players){
-//   var result='';
-//   var map = new Map();
-//   for (var i = 0; i < players.length; i++) {
-//     var playerArr = players[i];
-//     for (var j=0;j<playerArr.length;j++){
-//       if (map.get(playerArr[j])!=null){
-//         var newNum = map.get(playerArr[j])+1;
-//         map.set(playerArr[j], newNum);
-//       }else{
-//         map.set(playerArr[j], 1);
-//       }
-//     }
-//   }
-//   map.forEach(function(item, key, obj){
-//     result += key + 'x' + item + ',';
-//   });
-//   return result.substr(0,result.length-1);
-// }
-
 Page({
 
   /**
@@ -145,15 +142,18 @@ Page({
       series: series,
       yAxis: {
         min: 0,
-        max: 52,
+        max: 156,
         disabled : true
       },
       xAxis:{
         disabled: true,
         disableGrid: true
       },
-      width: 280,
-      height: 175,
+      width: 272,
+      height: 206,
+      xAxisHeight: 0,
+      padding: 0,
+      legendHeight: 0,
       legend : false,
       animation : true
     });

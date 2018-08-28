@@ -10,13 +10,13 @@
 'use strict';
 
 var config = {
-  yAxisWidth: 15,
-  yAxisSplit: 5,
-  xAxisHeight: 15,
-  xAxisLineHeight: 15,
-  legendHeight: 15,
+  yAxisWidth: 0,//15
+  yAxisSplit: 5,//5
+  xAxisHeight: 0,//15
+  xAxisLineHeight: 0,//15
+  legendHeight: 0,//15
   yAxisTitleWidth: 15,
-  padding: 12,
+  padding: 0,//12
   columePadding: 3,
   fontSize: 10,
   dataPointShape: ['triangle'],//['circle', 'diamond', 'triangle', 'rect']
@@ -1080,12 +1080,12 @@ function drawXAxis(categories, opts, config, context) {
 
   var startY = opts.height - config.padding - config.xAxisHeight - config.legendHeight;
   var endY = startY + config.xAxisLineHeight;
-
   context.beginPath();
   context.setStrokeStyle(opts.xAxis.gridColor || "#cccccc");
   context.setLineWidth(1);
-  context.moveTo(startX, startY);
-  context.lineTo(endX, startY);
+  // 隐藏x轴
+  // context.moveTo(startX, startY);
+  // context.lineTo(endX, startY);
   if (opts.xAxis.disableGrid !== true) {
     if (opts.xAxis.type === 'calibration') {
       xAxisPoints.forEach(function (item, index) {
@@ -1119,7 +1119,8 @@ function drawXAxis(categories, opts, config, context) {
     context.setFillStyle(opts.xAxis.fontColor || '#666666');
     categories.forEach(function (item, index) {
       var offset = eachSpacing / 2 - measureText(item) / 2;
-      context.fillText(item, xAxisPoints[index] + offset, startY + config.fontSize + 5);
+      // 隐藏刻度
+      // context.fillText(item, xAxisPoints[index] + offset, startY + config.fontSize + 5);
     });
     context.closePath();
     context.stroke();
@@ -1138,7 +1139,8 @@ function drawXAxis(categories, opts, config, context) {
 
       context.rotate(-1 * config._xAxisTextAngle_);
       context.translate(transX, transY);
-      context.fillText(item, xAxisPoints[index] + offset, startY + config.fontSize + 5);
+      // 隐藏刻度
+      // context.fillText(item, xAxisPoints[index] + offset, startY + config.fontSize + 5);
       context.closePath();
       context.stroke();
       context.restore();

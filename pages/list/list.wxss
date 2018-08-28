@@ -50,13 +50,13 @@
   white-space: nowrap;
 }
 
-/** ---------------------- 其它元素样式--------------------------------*/
+/** ---------------------- 列表样式--------------------------------*/
 
 .home-view-item{
   display: flex;
-  /* justify-content: center; */
   position: relative;
   height: 68px;
+  column-count:3;
 }
 
 .item-image{
@@ -68,29 +68,27 @@
 
 .item-text{
   margin-left: 104px;
+  width: 95%;
+  min-width: 200px;
+  max-width: 600px;
   /* position: absolute; */
 }
 
-.item-title-text{
+.item-text-title{
   margin: 4px;
   font-size: 14px;
   font-weight: 600;
 }
 
-.item-desc-text{
+.item-text-desc{
   margin-top: 2px;
   margin-left: 4px;
   font-size: 10px;
 }
 
-.item-more{
-  /* display: flex; */
-  /* justify-content: center; */
-  margin-right: 4px;
-}
-
 .item-detail-png{
   /* margin-top: 4px; */
+  float:right;
   width: 24px;
   height: 17px;
 }

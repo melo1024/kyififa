@@ -14,9 +14,9 @@
     <view class='home-view-item'>
       <image src='images/532.jpg' mode='scaleToFill' class='item-image'/>
       <view class='item-text'>
-        <view wx:if="{{formation.level < 6}}" class='item-title-text'> {{formation.name}}，解锁等级：＜6 </view>
-        <view wx:else class='item-title-text'> {{formation.name}}，解锁等级：{{formation.level}} </view>
-        <view class='item-desc-text'>{{formation.desc}}</view>
+        <view wx:if="{{formation.level < 6}}" class='item-text-title'> {{formation.name}}，解锁等级：＜6 </view>
+        <view wx:else class='item-text-title'> {{formation.name}}，解锁等级：{{formation.level}} </view>
+        <view class='item-text-desc'>{{formation.desc}}</view>
       </view>
       <image src='images/detail.png' mode='scaleToFill' class='item-detail-png'/>
     </view>
