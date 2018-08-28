@@ -2,6 +2,7 @@ var app = getApp();
 var allFormations = app.globalData.allFormations;
 for (var i = 0; i < allFormations.length; i++){
   allFormations[i]['desc'] = '由' + app.getDesc(allFormations[i].players) + '组成';
+  // allFormations[i]['image'] = images[i];
 }
 
 function isFormationContrainsAllPlayers(formation, keyWords) {
@@ -63,4 +64,5 @@ Page({
   onLoad: function (option) {
     this.setData({ resultData: allFormations });
   }
-})
+});
+

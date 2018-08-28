@@ -12,7 +12,7 @@
 <view wx:for="{{resultData}}" wx:for-item="formation" class='formations-view'>
   <navigator url="/pages/detail/detail?id={{formation.id}}">
     <view class='home-view-item'>
-      <image src='images/532.jpg' mode='scaleToFill' class='item-image'/>
+      <image src='images/{{index+1}}.png' mode='scaleToFill' class='item-image'/>
       <view class='item-text'>
         <view wx:if="{{formation.level < 6}}" class='item-text-title'> {{formation.name}}，解锁等级：＜6 </view>
         <view wx:else class='item-text-title'> {{formation.name}}，解锁等级：{{formation.level}} </view>

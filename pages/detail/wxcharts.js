@@ -9,6 +9,8 @@
 
 'use strict';
 
+
+
 var config = {
   yAxisWidth: 0,//15
   yAxisSplit: 5,//5
@@ -18,9 +20,9 @@ var config = {
   yAxisTitleWidth: 15,
   padding: 0,//12
   columePadding: 3,
-  fontSize: 10,
-  dataPointShape: ['triangle'],//['circle', 'diamond', 'triangle', 'rect']
-  colors: ['#90ed7d', '#f7a35c', '#7cb5ec', '#f15c80', '##434348', '8085e9'],//['#7cb5ec', '#f7a35c', '#434348', '#90ed7d', '#f15c80', '#8085e9']
+  fontSize: 13,
+  dataPointShape: ['circle'],//['circle', 'diamond', 'triangle', 'rect']
+  colors: ['#FFFFFF'],//['#9370DB', '#f7a35c', '#7cb5ec', '#f15c80', '#434348', '#1E90FF']
   pieChartLinePadding: 25,
   pieChartTextPadding: 15,
   xAxisTextPadding: 3,
@@ -497,6 +499,7 @@ function getDataPoints(data, minRange, maxRange, xAxisPoints, eachSpacing, opts,
       var height = validHeight * (item - minRange) / (maxRange - minRange);
       height *= process;
       point.y = opts.height - config.xAxisHeight - config.legendHeight - Math.round(height) - config.padding;
+      // point.value = value[index];
       points.push(point);
     }
   });
@@ -575,8 +578,8 @@ function drawPointShape(points, color, shape, context) {
   } else if (shape === 'circle') {
     points.forEach(function (item, index) {
       if (item !== null) {
-        context.moveTo(item.x + 3.5, item.y);
-        context.arc(item.x, item.y, 4, 0, 2 * Math.PI, false);
+        context.moveTo(item.x + 7, item.y);//3.5
+        context.arc(item.x, item.y, 8, 0, 2 * Math.PI, false);//R:4
       }
     });
   } else if (shape === 'rect') {
@@ -589,13 +592,20 @@ function drawPointShape(points, color, shape, context) {
   } else if (shape === 'triangle') {
     points.forEach(function (item, index) {
       if (item !== null) {
-        context.moveTo(item.x, item.y - 4.5);
-        context.lineTo(item.x - 4.5, item.y + 4.5);
-        context.lineTo(item.x + 4.5, item.y + 4.5);
-        context.lineTo(item.x, item.y - 4.5);
+        context.moveTo(item.x, item.y - 6);//4.5
+        context.lineTo(item.x - 6, item.y + 6);
+        context.lineTo(item.x + 6, item.y + 6);
+        context.lineTo(item.x, item.y - 6);
       }
     });
-  }
+  } 
+  // else if (shape === 'image') {
+  //   points.forEach(function (item, index) {
+  //     if (item !== null) {
+  //       context.drawImage(images[item.value], item.x - 20, item.y - 20, 40, 40);
+  //     }
+  //   });
+  // }
   context.closePath();
   context.fill();
   context.stroke();
@@ -642,17 +652,17 @@ function drawRingTitle(opts, config, context) {
 }
 
 function drawPointText(points, series, config, context) {
-  // 绘制数据文案
   var data = series.data;
   var value = series.value;
 
   context.beginPath();
   context.setFontSize(config.fontSize);
-  context.setFillStyle('#666666');
+  context.setFillStyle('#444444');//666666
+  // 绘制数据文案
   points.forEach(function (item, index) {
     if (item !== null) {
       var formatVal = series.format ? series.format(data[index]) : value[index];
-      context.fillText(formatVal, item.x - measureText(formatVal) / 2, item.y - 6);
+      context.fillText(formatVal, item.x - measureText(formatVal, config.fontSize) / 2, item.y - 12);
     }
   });
   context.closePath();
