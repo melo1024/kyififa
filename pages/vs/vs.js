@@ -4,62 +4,74 @@ var images = [
     id: '1',
     src: 'images/1.jpg',
     name: '前锋',
-    data: '2017/11/1'
-  }, {
-    id: '2',
-    src: 'images/2.jpg',
-    name: '内锋',
-    data: '2017/11/2'
-  }, {
-    id: '3',
-    src: 'images/3.jpg',
-    name: '中锋',
-    data: '2017/11/3'
-  }, {
+    url: 'https://mp.weixin.qq.com/s/zMDvwTESZPOA0XtXdx9lZw',
+    data: '2018/8/16'
+  }, 
+  // {
+  //   id: '2',
+  //   src: 'images/2.jpg',
+  //   name: '内锋',
+  //   data: '2017/11/2'
+  // }, {
+  //   id: '3',
+  //   src: 'images/3.jpg',
+  //   name: '中锋',
+  //   data: '2017/11/3'
+  // },
+   {
     id: '4',
-    src: 'images/1.jpg',
+    src: 'images/4.jpg',
     name: '边锋',
-    data: '2017/11/4'
+    url: 'https://mp.weixin.qq.com/s/Zxav_9e6f0wYgQMJ8Bfqzw',
+    data: '2018/8/16'
   }, {
     id: '5',
-    src: 'images/2.jpg',
+    src: 'images/5.jpg',
     name: '前腰',
-    data: '2017/11/5'
+    url: 'https://mp.weixin.qq.com/s/bpV61UeIW7QrCOwjRymYgg',
+    data: '2018/8/16'
   }, {
     id: '6',
-    src: 'images/3.jpg',
+    src: 'images/6.jpg',
     name: '边前卫',
-    data: '2017/11/6'
+    url: 'https://mp.weixin.qq.com/s/ee077KEVSSBvdjLCwhLgdA',
+    data: '2018/8/16'
   }, {
     id: '7',
-    src: 'images/1.jpg',
+    src: 'images/7.jpg',
     name: '中前卫',
-    data: '2017/11/7'
+    url: 'https://mp.weixin.qq.com/s/S9_-VYLSDfsA7-D79qKIVw',
+    data: '2018/8/16'
   }, {
     id: '8',
-    src: 'images/2.jpg',
+    src: 'images/8.jpg',
     name: '后腰',
-    data: '2017/11/8'
+    url: 'https://mp.weixin.qq.com/s/k9nMr4sPGnDQiAgiJ0MMEQ',
+    data: '2018/8/16'
   }, {
     id: '9',
-    src: 'images/3.jpg',
+    src: 'images/9.jpg',
     name: '翼卫',
-    data: '2017/11/9'
+    url: 'https://mp.weixin.qq.com/s/vR0YxIoFBuWv6I7ateEsSg',
+    data: '2018/8/16'
   }, {
     id: '10',
-    src: 'images/1.jpg',
+    src: 'images/10.jpg',
     name: '边后卫',
-    data: '2017/11/10'
+    url: 'https://mp.weixin.qq.com/s/5Q_zvpK6FbvqmJcOzfZIKw',
+    data: '2018/8/16'
   }, {
     id: '11',
-    src: 'images/3.jpg',
+    src: 'images/11.jpg',
     name: '中后卫',
-    data: '2017/11/11'
+    url: 'https://mp.weixin.qq.com/s/0mIYcB5t20KVKOc2Y0lZDA',
+    data: '2018/8/16'
   }, {
     id: '12',
-    src: 'images/4.jpg',
+    src: 'images/12.jpg',
     name: '门将',
-    data: '2017/11/11'
+    url: 'https://mp.weixin.qq.com/s/pVdFGKEleiqILSxuY-twhQ',
+    data: '2018/8/16'
   }
 ];
 Page({

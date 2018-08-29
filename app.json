@@ -2,7 +2,7 @@
   "pages": [
     "pages/index/index",
     "pages/list/list",
-    "pages/gift/gift",
+    "pages/webpage/webpage",
     "pages/vs/vs",
     "pages/detail/detail",
     "pages/logs/logs"

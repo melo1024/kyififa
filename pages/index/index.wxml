@@ -4,8 +4,8 @@
     <navigator url="/pages/list/list" class='formation-view' >阵型查询</navigator>
     <view class='other-view'>
       <navigator url="/pages/vs/vs" class='recommend-view' >球员推荐</navigator>
-      <navigator url="/pages/gift/gift" class='gift-view' >礼包汇总</navigator>
+      <navigator url="/pages/webpage/webpage?typeId=1&url=https://mp.weixin.qq.com/s/KWqNIZy668U3XLebmxaMdQ" class='gift-view' >礼包汇总</navigator>
     </view>
   </view>
 </view>
-<text class='tip-text'>小程序持续改进中，欢迎向订阅号fifa_kyi提出您的宝贵意见(*￣︶￣)</text>
+<text class='tip-text'>小程序持续改进中，欢迎向订阅号fifa_kyi提出您的宝贵意见</text>

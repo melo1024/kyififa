@@ -1,26 +1,22 @@
-<!--pages/vs/vs.wxml-->
-<!-- <web-view src="https://mp.weixin.qq.com/s?__biz=MzI3NDYxMTU4Nw==&mid=2247483696&idx=1&sn=6edfeacbbe19ae27cfd0205fea14fb41&chksm=eb102ddcdc67a4caf35e97dd7c259f58adb9854ba0a470cdd6fe9682a2398c980867dc4e5990&mpshare=1&scene=1&srcid=0823PB3KaOA7OLt88VrVW0KX&pass_ticket=q2Rpyf5KUEKjT1z7g3qGCRZ1dK7jjId9%2FObPTzkA5gZROLPcCmm3axEPOQYo4Hec#rd"></web-view> -->
-<!-- <web-view src="https://blog.csdn.net/weixin_43050826/article/details/81990358"></web-view> -->
-<!-- <text>{{content}}</text> -->
-<!-- <web-view src="https://mp.weixin.qq.com/mp/homepage?__biz=MzI3NDYxMTU4Nw==&hid=1&sn=06fb8c3a7440d404f555f2b1762b86f6&scene=18#wechat_redirect"></web-view> -->
-<!-- <navigator url="/pages/vs/vs" class='recommend-view' >球员推荐</navigator>
-正在建设中... -->
-<!-- <view class="free-panel-title">纯css3瀑布流布局 ( 利用css3的column-＊属性 )</view> -->
     <view class="free-WaterfallFlow">
       <block>
         <view class="flex-wrap" wx:for="{{images}}" wx:key='{{item.src}}' 
         wx:if="{{item.id%2!=''}}">
-          <image mode="widthFix" src="{{item.src}}"></image>
-          <view>{{item.name}}</view>
-          <view>{{item.data}}</view>
+          <navigator url="/pages/webpage/webpage?typeId=2&url={{item.url}}">
+            <image mode="widthFix" src="{{item.src}}"></image>
+            <view>{{item.name}}</view>
+            <view>{{item.data}}</view>
+          </navigator>
         </view>
       </block>
       <block>
         <view class="flex-wrap" wx:for="{{images}}" wx:key='{{item.src}}'
         wx:if="{{item.id%2==''}}">
-          <image mode="widthFix" src="{{item.src}}"></image>
-          <view>{{item.name}}</view>
-          <view>{{item.data}}</view>
+          <navigator url="/pages/webpage/webpage?typeId=2&url={{item.url}}">
+            <image mode="widthFix" src="{{item.src}}"></image>
+            <view>{{item.name}}</view>
+            <view>{{item.data}}</view>
+          </navigator>
         </view>
       </block>
     </view>

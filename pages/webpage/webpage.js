@@ -5,13 +5,25 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    url : ''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.setData({ url: options.url});
+    if (options.typeId==1){
+      // 礼包汇总
+      wx.setNavigationBarTitle({
+        title: 'FIFA阵型助手-礼包汇总'
+      })
+    } else {
+      // 球员推荐
+      wx.setNavigationBarTitle({
+        title: 'FIFA阵型助手-球员推荐'
+      })
+    }
 
   },
 

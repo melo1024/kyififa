@@ -60,4 +60,5 @@ Page({
   onLoad: function(option){
     this.setData({ resultData: allFormations });
   }
-})
+});
+
