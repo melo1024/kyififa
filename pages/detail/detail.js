@@ -6,7 +6,7 @@ function getHeightByLocation(location){
   var height;
   switch (location){
     case '前锋': height = 138; break;
-    case '中锋': height = 124; break;
+    case '中锋': height = 116; break;
     case '左内锋': 
     case '右内锋': height = 134; break;
     case '左边锋':
