@@ -27,9 +27,9 @@
   justify-content: center;
   align-items: center;
   border-radius: 10px;
-  background: #E4E3F1;
-  font-size:15px;
-  font-weight:500;
+  background: rgb(180, 185, 194);
+  font-size:13px;
+  font-weight:600;
 }
 
 .formation-right{

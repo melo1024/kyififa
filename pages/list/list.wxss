@@ -57,6 +57,7 @@
   position: relative;
   height: 68px;
   column-count:3;
+  padding-right:3px;
 }
 
 .item-image{
