@@ -38,31 +38,31 @@ var images = [
     data: '2018/8/16'
   }, {
     id: '7',
-    src: 'images/7.jpg',
+    src: 'images/10.jpg',
     name: '中前卫',
     url: 'https://mp.weixin.qq.com/s/S9_-VYLSDfsA7-D79qKIVw',
     data: '2018/8/16'
   }, {
     id: '8',
-    src: 'images/8.jpg',
+    src: 'images/11.jpg',
     name: '后腰',
     url: 'https://mp.weixin.qq.com/s/k9nMr4sPGnDQiAgiJ0MMEQ',
     data: '2018/8/16'
   }, {
     id: '9',
-    src: 'images/9.jpg',
+    src: 'images/5.jpg',
     name: '翼卫',
     url: 'https://mp.weixin.qq.com/s/vR0YxIoFBuWv6I7ateEsSg',
     data: '2018/8/16'
   }, {
     id: '10',
-    src: 'images/10.jpg',
+    src: 'images/6.jpg',
     name: '边后卫',
     url: 'https://mp.weixin.qq.com/s/5Q_zvpK6FbvqmJcOzfZIKw',
     data: '2018/8/16'
   }, {
     id: '11',
-    src: 'images/11.jpg',
+    src: 'images/10.jpg',
     name: '中后卫',
     url: 'https://mp.weixin.qq.com/s/0mIYcB5t20KVKOc2Y0lZDA',
     data: '2018/8/16'

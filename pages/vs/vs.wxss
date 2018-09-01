@@ -1,6 +1,6 @@
 /* pages/vs/vs.wxss */
 .free-WaterfallFlow{
-  margin-left:2%;
+  margin-left:2.3%;
   width:94%;
   column-count:2;/*column-count 属性规定元素应该被分隔的列数：*/
 }

@@ -1,23 +1,31 @@
 <!--pages/detail/detail.wxml-->
 
-<view class='formation-text-box'>
+<!-- <view class='formation-text-box'>
   <view class='formation-left'>阵型：</view>
   <view wx:if="{{level < 6}}" class='formation-right'>{{title}}，解锁等级：＜6 </view>
   <view wx:else class='formation-right'>{{title}}，解锁等级：{{level}}</view>
-</view>
+</view> -->
 
 <view class='formation-view' >
 <canvas canvas-id='formationCanvas' 
-style="width: 272px; height:206px; background-image: url('{{base64image}}');background-size: cover;"></canvas>
+style="width: 272px; height:206px; background-image: url('{{base64image}}');background-size: cover;">
+    <view class='r_text'>{{level}}</view>
+    <view class='right_top'></view>
+</canvas>
 </view>
 
 <view class='formation-text-box'>
-  <view class='formation-left'>构成：</view>
+  <view class='formation-left'>构成</view>
   <view class='formation-right'>{{desc}}</view>
 </view>
 
 <view class='formation-text-box'>
-  <view class='formation-left'>分析：</view>
+  <view class='formation-left'>点评</view>
   <view class='formation-right'>{{analysis}}</view>
+</view>
+
+<view wx:if="{{author != null}}" class='formation-text-box'>
+  <view class='formation-left'>作者</view>
+  <view class='formation-right'>{{author}}</view>
 </view>
 

@@ -92,10 +92,11 @@ Page({
    * 页面的初始数据
    */
   data: {
-    title: '阵型详情',
+    // title: '阵型详情',
     analysis: '',
     desc: '',
-    level: 0,
+    level: '',
+    author: null,
     base64image: ''
   },
 
@@ -105,13 +106,24 @@ Page({
   onLoad: function (options) {
     var app = getApp();
     var formation = app.loadFormation(options.id);
-    this.setData({ title: formation.name });
-    this.setData({ level: formation.level });
+    var level = formation.level < 6 ? 'L6' : 'L'+formation.level;
+    if (level.length == 2){
+      level += ' ';
+    }
+    console.log(level+'级')
+    this.setData({ level: level });
+    wx.setNavigationBarTitle({
+      title: '阵型详情-'+formation.name
+    })
+    // this.setData({ title: formation.name });
+    if (formation.author!=null){
+      this.setData({ author: formation.author });//+ ' ' + formation.datetime
+    }
     this.setData({ base64image: base64image});
     var players = formation.players;//[["前锋", "前锋"], ["左前卫", "中前卫", "中前卫", "右前卫"], ["左后卫", "中后卫", "中后卫", "右后卫"]];
-    var desc = app.getDesc(players);
+    var desc = app.getDesc(players);//'由' + app.getDesc(players) + '组成，解锁等级：' + level;
     this.setData({ desc: desc });
-    var analysis = app.getAnalysis(formation.id);
+    var analysis = formation.analysis == null ? '暂无内容，欢迎向订阅号fifa_kyi投稿！' : formation.analysis;
     this.setData({ analysis: analysis });
     var series = getSeries(players);
     var Charts = require('wxcharts.js');
