@@ -90,7 +90,7 @@ Page({
   onLoad: function (options) {
     this.setData({ images: images })
     // wx.request({
-    //   url: 'http://api.wantuole.com/api/fifa/list2?1=1&n=%E6%AC%A7%E6%96%87&j=ST&mi=91&v=1&_=1535042679212', //仅为示例，并非真实的接口地址
+    //   url: 'https://mp.weixin.qq.com/s/nEphhDPFDt8FC4zAXuTBAw', //仅为示例，并非真实的接口地址
     //   // data: {
     //   //   x: '',
     //   //   y: ''

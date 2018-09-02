@@ -1,10 +1,19 @@
 <!-- <navigator url="/pages/vs/vs" class='home-view-item'> -->
 <view class='main-page'>
   <view class='main-view'>
-    <navigator url="/pages/list/list" class='formation-view' >阵型查询</navigator>
+    <navigator url="/pages/list/list" class='formation-view' >
+      <view class='item-view'><image src='images/ICON1.png' mode='scaleToFill' class='item-png'/></view>
+      <text class='item-text'>阵型查询</text>
+    </navigator>
     <view class='other-view'>
-      <navigator url="/pages/vs/vs" class='recommend-view' >球员推荐</navigator>
-      <navigator url="/pages/webpage/webpage?typeId=1&url=https://mp.weixin.qq.com/s/KWqNIZy668U3XLebmxaMdQ" class='gift-view' >礼包汇总</navigator>
+      <navigator url="/pages/vs/vs" class='recommend-view' >
+       <view class='item-view'><image src='images/ICON2.png' mode='scaleToFill' class='item-png-other'/></view>
+       <text class='item-text'>球员推荐</text>
+      </navigator>
+      <navigator url="/pages/webpage/webpage?typeId=1&url=https://mp.weixin.qq.com/s/KWqNIZy668U3XLebmxaMdQ" class='gift-view' >
+        <view class='item-view'><image src='images/ICON3.png' mode='scaleToFill' class='item-png-other'/></view>
+        <text class='item-text'>礼包汇总</text>
+      </navigator>
     </view>
   </view>
 </view>

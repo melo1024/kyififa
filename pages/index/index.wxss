@@ -26,6 +26,8 @@ page{
   background: linear-gradient(to bottom right, #83d25b, #52972f);
   border-radius: 5px;
   /* text-align: center; */
+  display: table;
+  text-align: center;
 }
 
 .other-view{
@@ -39,20 +41,44 @@ page{
 .recommend-view{
   width: 145px;
   height: 145px;
-  /* background-color: rgb(120, 186, 0); */
   background: linear-gradient(to bottom right, #658fe3, #2f5196);
   border-radius: 5px;
+  /* display: table; */
+  text-align: center;
 }
 
 .gift-view{
   margin-left:10px; 
   width: 145px;
   height: 145px;
-  /* background-color:rgb(255, 140, 0); */
   background: linear-gradient(to bottom right, #e78282, #a83c3c);
   border-radius: 5px;
+  /* display: table; */
+  text-align: center;
 }
 
+.item-png{
+  padding-top: 15px;
+  width: 90px;
+  height: 90px;
+}
+
+.item-png-other{
+  padding-top: 20px;
+  width: 82px;
+  height: 82px;
+}
+
+.item-view{
+  width: 100%;
+}
+
+.item-text{
+  width: 100%;
+  font-size: 16px;
+}
+
+/* -------------tip----------------- */
 .tip-text{
   margin-left:5px; 
   position:fixed; 
@@ -62,5 +88,3 @@ page{
   font-weight: 300;
   /* color: #949494; */
 }
-
-
